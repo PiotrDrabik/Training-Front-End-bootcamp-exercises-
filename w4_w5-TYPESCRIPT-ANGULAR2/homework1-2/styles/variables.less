@@ -1,0 +1,22 @@
+@board-width:                            650px;
+@board-height:                           500px;
+@board-padding:                            2px;
+
+@ball-radius:                             12px;
+@ball-position-y:                         @board-height - @paddle-bottom-offset - @paddle-height - @ball-radius * 2 - 2;
+@ball-position-x:                         (@board-width - 2 * @board-padding - @ball-radius * 2) / 2;
+
+@paddle-height:                           16px;
+@paddle-width:                            96px;
+@paddle-border-radius:                     8px;
+@paddle-bottom-offset:                    20px;
+@paddle-starting-position:                (@board-width - 2 * @board-padding - @paddle-width) / 2;
+
+@bricks-in-row:                            8;
+@bricks-rows:                              7;
+@brick-gap:                                4px;
+@brick-width:                             (@board-width - 2 * @board-padding - @brick-gap * (@bricks-in-row + 1)) / @bricks-in-row;
+@brick-height:                            @brick-width / 4;
+
+
+

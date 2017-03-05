@@ -1,0 +1,98 @@
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+h3 em {
+  font-size: 0.7em;
+}
+
+.game-board {
+  display: block;
+  position: relative;
+  padding: @board-padding;
+  width: @board-width;
+  height: @board-height;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  border: 1px solid black;
+  border-bottom: 0px;
+
+  .ball {
+    display: block;
+    position: absolute;
+
+    width: @ball-radius * 2;
+    height: @ball-radius * 2;
+    border-radius: @ball-radius;
+
+    top: @ball-position-y;
+    left: @ball-position-x;
+
+    background-color: blue;
+
+    z-index: 10;
+  }
+
+  .paddle {
+    display: block;
+    position: absolute;
+
+    bottom: @paddle-bottom-offset;
+    left: @paddle-starting-position;
+
+    height: @paddle-height;
+    width: @paddle-width;
+
+    border-radius: @paddle-border-radius;
+
+    background-color: black;
+  }
+
+  .brick {
+    display: block;
+    position: absolute;
+
+    top: 20px;
+
+    height: @brick-height;
+    width: @brick-width;
+
+    background-color: black;
+
+  &.hardbrick {
+      background-color: red;
+    }
+  &.deathlessbrick {
+      background-color: yellow;
+    }
+
+    .brick-col-loop (@i) when (@i > 0) {
+      &.col-@{i} {
+        left: @brick-gap * @i + @brick-width * (@i - 1);
+      }
+      .brick-col-loop(@i - 1);
+    }
+
+    .brick-row-loop (@i) when (@i > 0) {
+      &.row-@{i} {
+        top: @brick-gap * @i + @brick-height * (@i - 1);
+      }
+      .brick-row-loop(@i - 1);
+    }
+
+    .brick-row-loop(@bricks-rows);
+    .brick-col-loop(@bricks-in-row);
+
+
+
+  }
+
+
+
+}

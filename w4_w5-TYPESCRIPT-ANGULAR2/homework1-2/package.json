@@ -1,0 +1,40 @@
+{
+  "name": "brickbuster",
+  "version": "1.0.0",
+  "description": "Sample BrickBuster game created for TypeScript course on http://eduweb.pl/",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "serve": "gulp webserve",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduweb-pl/typescript-brickbuster.git"
+  },
+  "author": "Łukasz Piotr Łuczak <lukasz.luczak@onet.pl>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/eduweb-pl/typescript-brickbuster/issues"
+  },
+  "homepage": "https://github.com/eduweb-pl/typescript-brickbuster#readme",
+  "dependencies": {
+    "gulp-serve": "^1.4.0"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^4.1.0",
+    "gulp-less": "^3.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-tap": "^0.1.3",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.8",
+    "tsify": "^1.0.1",
+    "typescript": "^1.8.10"
+  }
+}

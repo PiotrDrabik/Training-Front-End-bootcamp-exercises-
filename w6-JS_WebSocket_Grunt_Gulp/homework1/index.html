@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lokalizacja na Bing</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<h1>Pobierz swoją lokalizację</h1>
+	<button id="button1" type="button">Pobierz link do swojej lokalizacji na mapach BING</button>
+	<h2 id="here"></h2>
+	<script>
+	var but1 = document.querySelector("#button1");
+		but1.addEventListener("click", function(event){
+			event.preventDefault();
+			checkpos();
+		});
+		function checkpos() {
+		if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(function(position) {
+				console.log("it's working, your position is: " + position.coords.latitude + "," + position.coords.longitude);
+				var put = document.querySelector("#here");
+				 abc = '<a href=' + '"' + 'http://bing.com/maps/default.aspx?cp=' + position.coords.latitude + '~' + position.coords.longitude + '"' + ' target="_blank" >Zobacz swoją pozycję</a>';
+				 put.innerHTML = abc;
+				}, function() {}, function() {})
+			}
+		}
+	</script>
+</body>
+</html>

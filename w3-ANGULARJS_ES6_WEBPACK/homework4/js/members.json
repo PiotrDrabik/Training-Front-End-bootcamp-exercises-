@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Adam Nowak",
+        "position": "WebDeveloper",
+        "avatar": "img/comedian.jpg"
+    },
+    {
+        "name": "Grzegorz Kowalski",
+        "position": "Front-end Developer",
+        "avatar": "img/cool.jpg"
+    },
+    {
+        "name": "Rafał Nijaki",
+        "position": "Back-end Developer",
+        "avatar": "img/constructive.jpg"
+    }
+]

@@ -1,0 +1,18 @@
+{
+  "name": "w3e3blog",
+  "version": "1.0.0",
+  "description": "w3e3 exercise Blog Angular with Angular Material",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Piotr Drabik",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.9",
+    "angular-animate": "^1.5.9",
+    "angular-aria": "^1.5.9",
+    "angular-material": "^1.1.1",
+    "angular-messages": "^1.5.9"
+  }
+}

@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form AngularJS with Foundation grid</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+
+    </style>
+  </head>
+  <body  ng-app="">
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>Walidacja formularza</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <h5>Proszę uzupełnić poszczególne pola formularza:</h5>
+        <!-- Grid Example -->
+        <form name="form1" novalidate>
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="row">
+                <div class="large-6 medium-6 columns">
+                  <label>Imię
+                    <input type="text" ng-invalid name="fnameInput" placeholder="Wpisz imię" name="UserName" ng-model="user.name" required>
+                  </label>
+                  <div ng-show="form1.fnameInput.$touched">
+                    <small ng-hide="form1.fnameInput.$valid" class="error">Wprowadź swoje imię</small>
+                  </div>
+                </div>
+                <div class="large-6 medium-6 columns">
+                  <label>Nazwisko</label>
+                  <input type="text" placeholder="Wpisz nazwisko (niewymagane)" name="lnameInput" ng-model="user.lastname">
+                  <div ng-show="form1.lnameInput.$touched">
+                    <small ng-hide="form1.lnameInput.$valid" class="error">Wprowadź swoje nazwisko</small>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="large-6 medium-6 columns">
+                  <div class="row collapse">
+                    <label>Adres e-mail</label>
+                    <div class="input-group">
+                      <input type="email" placeholder="Wpisz adres e-mail" class="input-group-field" name="mailInput" ng-model="user.email" required>
+                    </div>
+                    <div ng-show="form1.mailInput.$touched">
+                      <small ng-show="form1.mailInput.$error.required" class="error">Podaj adres e-mail</small>
+                      <small ng-show="form1.mailInput.$error.email" class="error">Podaj poprawny adres e-mail</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="large-6 medium-6 columns">
+                  <div class="row collapse">
+                    <label>Hasło</label>
+                    <div class="input-group">
+                      <input type="password" name="password" placeholder="Wpisz hasło" ng-model="user.password" pattern=".{5,}" class="input-group-field" required>
+                    </div>
+                    <div ng-show="form1.password.$touched">
+                      <small ng-show="form1.password.$error.required" class="error">Wprowadź hasło</small>
+                      <small ng-show="form1.password.$error.pattern" class="error">Wprowadzone hasło jest zbyt krótkie</small>
+                    </div>
+                  </div>
+                  <div ng-show="form1.password.$valid">
+                    <input type="checkbox" ng-model="showPass" name="showPwd"> Pokaż hasło: 
+                    <span ng-show="showPass">{{ user.password }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+                <div class="large-4 columns">
+                  <div ng-show="form1.password.$valid && form1.fnameInput.$valid && form1.lnameInput.$valid && form1.mailInput.$valid && checkreg">
+                    <button ng-click="" class="button" name="button" style="width: 200px;">Zatwierdź</button>
+                  </div>
+                  <div ng-show="!form1.password.$valid || !form1.fnameInput.$valid || !form1.lnameInput.$valid || !form1.mailInput.$valid || !checkreg">
+                    <button href="#" class="button disabled" style="width: 200px;">Zatwierdź</button>
+                  </div>
+                </div>
+                <div class="large-8 columns">
+                  <input id="checkbox2" type="checkbox" ng-model="checkreg" name="checkreg"  style="margin-bottom: 22px;">
+                  <label for="checkbox2">Potwierdzam zapoznanie się z regulaminem i akceptuję jego zapisy.</label>
+                  <div ng-show="form1.checkreg.$touched || form1.password.$valid && form1.fnameInput.$valid && form1.lnameInput.$valid && form1.mailInput.$valid">
+                    <small ng-hide="checkreg" class="error">Potwierdż akceptację regulaminu</small>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </form>
+         <div class="row" style="background-color: grey; color: white;">
+            <div class="large-12 columns">
+              <div ng-show="form1.$submitted" style>
+                <pre>user = {{user | json}}</pre>
+              </div>
+             </div>
+        </div>
+      </div>
+    </div>
+
+
+<!--
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/app.js"></script>
+    -->
+  </body>
+</html>

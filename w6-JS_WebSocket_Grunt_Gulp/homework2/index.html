@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Local Storage</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<form>
+		<input type="text" id="basename" placeholder="podaj nazwę bazy">
+		<input type="text" id="firstname" placeholder="podaj imię">
+		<input type="text" id="lastname" placeholder="podaj nazwisko">
+		<input type="text" id="age" placeholder="podaj wiek">
+		<input type="submit" id="button" value="Wyślij">
+		<hr />
+		<button type="button" id="button2">Pobierz zawartość local storage.</button>
+		<p id="leadtext"></p>
+		<p><ul id="here"></ul></p>
+	</form>
+	<script>
+		var but1 = document.querySelector("#button");
+		var but2 = document.querySelector("#button2");
+		var place = document.querySelector("#here");
+		var place2 = document.querySelector("#leadtext");
+		var inpAll = document.querySelectorAll('input[type="text"]');
+
+		but1.addEventListener("click", function(event){
+		    event.preventDefault();
+		    var namebase = inpAll[0].value;
+		    if (namebase !== "") {
+		    	var baza = localDB(namebase);
+		    	console.log(baza);
+		    	window.localStorage["DB1." + namebase] = baza;
+		    }
+		});
+		but2.addEventListener("click", function(event){
+		    event.preventDefault();
+		    getDB();
+		});
+		function localDB(base) {
+			var base = {
+				firstName: inpAll[1].value,
+			    lastName: inpAll[2].value,
+			    age: Number(inpAll[3].value)
+			}
+			return JSON.stringify(base);
+		}
+		function getDB() {
+			place2.innerHTML= "<strong><p>Liczba rekordów w localStorage: " + window.localStorage.length + ".</p><p> Lista wszystkich obiektów JSON: </strong></p>";
+			place.innerHTML = "";
+			var showdata, temp1;
+			for (i=0; i<window.localStorage.length; i++) {
+				showdata = window.localStorage.getItem(localStorage.key(i));
+				try {
+					temp1 = JSON.parse(showdata);
+				} catch (e) {
+					continue;	
+				}
+				console.log(temp1);	
+				var li=document.createElement('li');
+				place.appendChild(li);
+				li.innerHTML = showdata;
+			}
+		}
+		if (typeof Storage === undefined) {
+			place2.innerHTML = "przeglądarka nie obsługuje localStorage";
+			but1.disabled = true;
+			but2.disabled = true;
+		}
+	</script>
+</body>
+</html>

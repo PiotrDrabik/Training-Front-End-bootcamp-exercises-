@@ -1,0 +1,50 @@
+body, p {
+	display: flex;
+  	flex-wrap: wrap;	
+  	justify-content:center; 
+}
+
+body > * {
+	width: 100%;
+}
+
+button {
+	width: 20%;
+}
+
+input {
+	width: 50%;
+	margin: 1%;
+}
+
+#time, #name {
+	color: grey;
+}
+
+#name {
+	padding-right: 15px;
+}
+
+input:first-child {
+	background-color: green;
+	color: white;
+	height: 30px;
+}
+
+#chat {
+	background-color: lightgrey;
+	width: 50%;
+	height: 250px;
+	overflow-y: scroll;
+}
+
+input:nth-child(4) {
+    background-color: yellow;
+    height: 100px;
+}
+
+/*
+input:nth-child(2) {
+	background-color: green;
+}
+*/

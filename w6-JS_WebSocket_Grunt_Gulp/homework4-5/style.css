@@ -1,0 +1,13 @@
+#wrapper{
+	background: #ffffff;
+} 
+/*  header contact info section ***/
+.header_section{
+	background-color:black;
+	color:#fff;
+}
+/** navbar menus ***/
+.navigation_menu{
+	background-color: #fff;
+	border-top:2px solid black;
+}

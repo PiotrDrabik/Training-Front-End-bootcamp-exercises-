@@ -1,0 +1,33 @@
+.color {
+	background-color: green;
+}
+
+#horizontal {
+	list-style-type: none;
+}
+
+#horizontal > li {
+	 display: inline;  
+}
+
+div > i:first-child {
+		margin-left: 30px;
+}
+
+div > i {
+	padding-top: 20px;
+	margin-left: 5px;
+	padding-bottom: 30px;
+}
+
+.select {
+	color:green;
+}
+
+.unselect {
+	color:black;
+}
+
+.borders {
+	border: 1px solid red;
+}

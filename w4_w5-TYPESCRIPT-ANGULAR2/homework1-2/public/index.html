@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Sample BrickBuster game created for TypeScript course on http://eduweb.pl/">
+    <meta name="keywords" content="eduweb, BrickBuster">
+    <meta name="author" content="Łukasz Piotr Łuczak <lukasz.luczak@onet.pl>">
+    <title></title>
+    <link href="style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h1>BrickBuster</h1>
+    <h3>Score: <span id="score">0</span> &nbsp; Lives: <span id="lives">3</span>  &nbsp;  &nbsp;  &nbsp;  <em>Controls: arrow keys</em></h3>
+    <button id="newGame" style="display: none;">New game</button>
+
+    <div class="game-board">
+      <div class="ball"></div>
+      <div class="paddle"></div>
+
+      <div class="brick col-1 row-1"></div>
+      <div class="brick col-2 row-1"></div>
+      <div class="brick col-3 row-1"></div>
+      <div class="brick col-4 row-1"></div>
+      <div class="brick col-5 row-1"></div>
+      <div class="brick hardbrick col-6 row-1"></div>
+      <div class="brick col-7 row-1"></div>
+      <div class="brick col-8 row-1"></div>
+      <div class="brick hardbrick  col-1 row-2"></div>
+      <div class="brick col-2 row-2"></div>
+      <div class="brick col-3 row-2"></div>
+      <div class="brick col-4 row-2"></div>
+      <div class="brick col-5 row-2"></div>
+      <div class="brick col-6 row-2"></div>
+      <div class="brick col-7 row-2"></div>
+      <div class="brick col-8 row-2"></div>
+      <div class="brick col-1 row-3"></div>
+      <div class="brick col-2 row-3"></div>
+      <div class="brick col-3 row-3"></div>
+      <div class="brick col-4 row-3"></div>
+      <div class="brick hardbrick col-5 row-3"></div>
+      <div class="brick col-6 row-3"></div>
+      <div class="brick col-7 row-3"></div>
+      <div class="brick col-8 row-3"></div>
+      <div class="brick col-1 row-4"></div>
+      <div class="brick col-2 row-4"></div>
+      <div class="brick col-3 row-4"></div>
+      <div class="brick col-4 row-4"></div>
+      <div class="brick col-5 row-4"></div>
+      <div class="brick col-6 row-4"></div>
+      <div class="brick hardbrick col-7 row-4"></div>
+      <div class="brick col-8 row-4"></div>
+      <div class="brick col-1 row-5"></div>
+      <div class="brick col-2 row-5"></div>
+      <div class="brick col-3 row-5"></div>
+      <div class="brick col-4 row-5"></div>
+      <div class="brick col-5 row-5"></div>
+      <div class="brick hardbrick col-6 row-5"></div>
+      <div class="brick col-7 row-5"></div>
+      <div class="brick col-8 row-5"></div>
+      <div class="brick col-1 row-6"></div>
+      <div class="brick col-2 row-6"></div>
+      <div class="brick col-3 row-6"></div>
+      <div class="brick col-4 row-6"></div>
+      <div class="brick col-5 row-6"></div>
+      <div class="brick col-6 row-6"></div>
+      <div class="brick col-7 row-6"></div>
+      <div class="brick col-8 row-6"></div>
+      <div class="brick col-1 row-7"></div>
+      <div class="brick col-2 row-7"></div>
+      <div class="brick col-3 row-7"></div>
+      <div class="brick col-4 row-7"></div>
+      <div class="brick col-5 row-7"></div>
+      <div class="brick deathlessbrick col-6 row-7"></div>
+      <div class="brick col-7 row-7"></div>
+      <div class="brick col-8 row-7"></div>
+    </div>
+
+    <script src="application.js"></script>
+  </body>
+</html>

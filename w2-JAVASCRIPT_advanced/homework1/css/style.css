@@ -1,0 +1,15 @@
+
+#wrapper {
+	margin-top: 30px;
+}
+
+form {
+	margin-top : 20px;
+	margin-bottom: 20px;
+	padding: 25px;
+	background-color: green;
+}
+
+FORM >INPUT {
+	width: 20%;
+}
